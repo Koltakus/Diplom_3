@@ -36,7 +36,7 @@ class BasePage:
     def set_text_to_element(self, locator, text):
         element = self.driver.find_element(*locator)
         element.send_keys(text)
-        self.wait()
+
 
     @allure.step("Подождать пока появится елемент")
     def wait_for_element(self, locator):
@@ -51,8 +51,8 @@ class BasePage:
         ))
 
     @allure.step("Подождать")
-    def wait(self):
-        WebDriverWait(self.driver, 5)
+    def wait(self, locator):
+        WebDriverWait(self.driver, 5).until(expected_conditions.visibility_of_element_located(locator))
 
     @allure.step("Перейти на страницу")
     def go_to_page(self, url):
@@ -63,7 +63,6 @@ class BasePage:
     def open_page(self, locator, page_url):
         page = self.go_to_page(page_url)
         self.wait_for_element(locator)
-        self.wait()
         return page
 
     @allure.step("Проверить отображение элемента страницы")

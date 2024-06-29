@@ -10,3 +10,5 @@ class HeadersPageLocators:
     LOGO_LINK = By.XPATH, ".//a[(@href='/')]"
     # Кнопка Лента заказов
     FEED_LINK = By.XPATH, ".//a[(@href='/feed')]"
+    # Текст заголовка "Лента заказов"
+    FEED_HEADER_TEXT = By.CSS_SELECTOR, "h1"

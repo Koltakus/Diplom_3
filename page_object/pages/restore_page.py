@@ -44,6 +44,9 @@ class RestorePage(BasePage):
     def get_shown_mark(self):
         return self.find_element_without_wait(RestorePageLocators.PWD_SHOW_MARK)
 
+    @allure.step('Проверка текущего URL')
+    def get_current_url(self):
+        return self.driver.current_url
 
 
 

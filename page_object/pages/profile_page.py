@@ -10,11 +10,11 @@ class ProfilePage(BasePage):
     def go_to_history(self):
         self.find_element_with_wait(ProfilePageLocators.PROFILE_ORDERS_HISTORY)
         self.click_on_element(ProfilePageLocators.PROFILE_ORDERS_HISTORY)
-        self.wait()
+
 
     @allure.step("Выбрать заказ из истории заказов")
     def choose_order_from_history(self):
-        self.wait()
+        self.wait(ProfilePageLocators.HISTORY_ORDER_NUMBERS_LIST)
         order = self.find_element_with_wait(ProfilePageLocators.HISTORY_ORDER_NUMBERS_LIST)
         return order.text
 

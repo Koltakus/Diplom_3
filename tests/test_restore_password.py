@@ -37,7 +37,7 @@ class TestRestorePage:
         restore_page.open_restore_page()
         restore_page.go_to_reset_pwd_page(user)
         assert (restore_page.find_restore_otp() and
-                driver.current_url == PageUrl.RESET_PAGE_URL)
+                restore_page.get_current_url() == PageUrl.RESET_PAGE_URL)
 
     @allure.title('Проверка отображения пароля в явном виде')
     @allure.description('Пользователь находится на странице восстановления пароля и переходит на страницу ввода нового '

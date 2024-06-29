@@ -1,6 +1,5 @@
 import allure
 
-from page_object.page_locators.feed_page_locators import FeedPageLocators
 from page_object.page_locators.headers_page_locators import HeadersPageLocators
 from page_object.pages.base_page import BasePage
 
@@ -35,5 +34,5 @@ class HeadersPage(BasePage):
 
     @allure.step('Найти заголовок ленты заказов')
     def find_feed_text_header_element(self):
-        self.find_element_with_wait(FeedPageLocators.FEED_HEADER_TEXT)
+        self.find_element_with_wait(HeadersPageLocators.FEED_HEADER_TEXT)
 
